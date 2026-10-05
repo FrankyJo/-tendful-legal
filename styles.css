@@ -11,7 +11,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--primary);outline-of
 .header{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .brand{display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none;font-size:17px;font-weight:600;letter-spacing:-0.2px}
 .brand:hover{text-decoration:none}
-.brand-mark{width:36px;height:36px;border-radius:10px;background:var(--primary);color:var(--on-primary);display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:20px;line-height:1}
+.brand-mark{width:36px;height:36px;border-radius:9px;display:block;flex:none}
 .lang-switch{display:inline-flex;padding:2px;background:var(--surface-muted);border-radius:9999px}
 .lang-switch button{min-height:32px;min-width:44px;padding:0 12px;border:0;border-radius:9999px;background:transparent;color:var(--text-secondary);font:inherit;font-size:14px;font-weight:600;letter-spacing:0;cursor:pointer}
 .lang-switch button[aria-pressed="true"]{background:var(--surface);color:var(--text)}

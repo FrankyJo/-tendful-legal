@@ -1,49 +1,183 @@
 <!doctype html>
-<html lang="en" data-title-en="Tendful" data-title-uk="Tendful" data-desc-en="Tendful: recurring tasks, reminders and history in one calm place." data-desc-uk="Tendful: регулярні справи, нагадування та історія в одному спокійному місці.">
+<html lang="en" data-title-en="Things Tended: don’t forget what matters" data-title-uk="Things Tended: не забувай про важливе" data-desc-en="Things Tended keeps track of what needs looking after: car, home, pets and more. Recurring tasks, reminders, history and a Home Screen widget for iPhone." data-desc-uk="Things Tended стежить за тим, про що треба дбати: авто, дім, улюбленці та інше. Регулярні справи, нагадування, історія й віджет на головному екрані iPhone.">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tendful</title>
-<meta name="description" content="Tendful: recurring tasks, reminders and history in one calm place.">
+<title>Things Tended: don’t forget what matters</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="description" content="Things Tended keeps track of what needs looking after: car, home, pets and more. Recurring tasks, reminders, history and a Home Screen widget for iPhone.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Things Tended: don’t forget what matters">
+<meta property="og:description" content="Recurring tasks, reminders and history for your car, home, pets and more. Coming soon for iPhone.">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#fbf6f1" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#1b2031" media="(prefers-color-scheme: dark)">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="landing.css">
 <script src="i18n.js"></script>
 </head>
 <body>
-<div class="page">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-car" viewBox="0 0 24 24"><path d="M3.5 12.5 6 6h12l2.5 6.5M3.5 12.5V18h3v-1.5h11V18h3v-5.5z"/><circle cx="7.5" cy="14.5" r=".7"/><circle cx="16.5" cy="14.5" r=".7"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="m4 11 8-7 8 7M6 10v9h12v-9M10 19v-5h4v5"/></symbol>
+    <symbol id="i-paw" viewBox="0 0 24 24"><circle cx="6" cy="10.5" r="1.6"/><circle cx="10" cy="6.5" r="1.6"/><circle cx="14" cy="6.5" r="1.6"/><circle cx="18" cy="10.5" r="1.6"/><path d="M8 17c0-3 2-4.5 4-4.5s4 1.5 4 4.5c0 2-2 2.5-4 2.5s-4-.5-4-2.5Z"/></symbol>
+    <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 4c3.5 4 6 7 6 10a6 6 0 0 1-12 0c0-3 2.5-6 6-10Z"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><path d="M5 6h14M5 12h14M5 18h9"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 16v-5a6 6 0 0 1 12 0v5l1.5 2h-15L6 16ZM10 20.5a2 2 0 0 0 4 0"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></symbol>
+    <symbol id="i-sync" viewBox="0 0 24 24"><path d="M20 11a8 8 0 0 0-14-4M4 4v3.5h3.5M4 13a8 8 0 0 0 14 4M20 20v-3.5h-3.5"/></symbol>
+    <symbol id="i-widget" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 3 7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6l7-3Z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#main"><span data-lang="en" lang="en">Skip to content</span><span data-lang="uk" lang="uk">До вмісту</span></a>
+<div class="page wide">
   <header class="header">
-    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">T</span><span>Tendful</span></a>
+    <a class="brand" href="index.html"><img class="brand-mark" src="icon-72.png" width="36" height="36" alt=""><span>Things Tended</span></a>
     <div class="lang-switch js-only" role="group" aria-label="Language / Мова">
       <button type="button" data-set="en" aria-pressed="true">EN</button>
       <button type="button" data-set="uk" aria-pressed="false">UK</button>
     </div>
   </header>
-  <main>
-    <div data-lang="en" lang="en">
-      <div class="intro">
-        <h1>Tendful</h1>
-        <p class="tagline">Recurring tasks, reminders and history — in one calm place.</p>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <h1 id="hero-title"><span data-lang="en" lang="en">Don’t forget what matters.</span><span data-lang="uk" lang="uk">Не забувай про те, що має значення.</span></h1>
+        <p class="lead"><span data-lang="en" lang="en">Car, home, pet, documents. Things Tended reminds you in advance, keeps the history, and works out the next due date for you.</span><span data-lang="uk" lang="uk">Авто, дім, улюбленець, документи. Things Tended нагадає завчасно, збереже історію й сам розрахує наступний термін.</span></p>
+        <div class="cta">
+          <!-- APP_STORE_URL: no App Store link yet. When it exists, replace this <span> with
+               <a class="button" href="APP_STORE_URL">Download on the App Store</a> and update the text in both languages. -->
+          <span class="badge-soon"><span class="dot" aria-hidden="true"></span><span data-lang="en" lang="en">Coming soon on the App Store</span><span data-lang="uk" lang="uk">Незабаром в App Store</span></span>
+          <a class="button-quiet" href="#how"><span data-lang="en" lang="en">See how it works</span><span data-lang="uk" lang="uk">Як це працює</span></a>
+        </div>
+        <p class="hero-note"><span data-lang="en" lang="en">For iPhone · English and Ukrainian</span><span data-lang="uk" lang="uk">Для iPhone · українська та англійська</span></p>
       </div>
-      <div class="sections">
-        <a class="card card-link" href="privacy.html">Privacy policy</a>
-        <a class="card card-link" href="support.html">Support</a>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="phone">
+          <div class="phone-screen">
+            <span class="island"></span>
+            <div class="scr">
+              <p class="scr-greet"><span data-lang="en" lang="en">Good morning</span><span data-lang="uk" lang="uk">Доброго ранку</span></p>
+              <p class="scr-sum"><span data-lang="en" lang="en">Today 2 tasks need your attention.</span><span data-lang="uk" lang="uk">Сьогодні 2 завдання потребують уваги.</span></p>
+              <p class="scr-sec"><span data-lang="en" lang="en">Needs attention</span><span data-lang="uk" lang="uk">Потребує уваги</span></p>
+              <div class="tcard"><span class="tile t-slate"><svg><use href="#i-car"/></svg></span><span class="tbody"><span class="ttitle"><span data-lang="en" lang="en">Change engine oil</span><span data-lang="uk" lang="uk">Замінити моторну оливу</span></span><span class="tmeta"><span data-lang="en" lang="en">Car</span><span data-lang="uk" lang="uk">Авто</span></span></span><span class="pill p-overdue"><span data-lang="en" lang="en">Overdue by 3 days</span><span data-lang="uk" lang="uk">Прострочено на 3 дні</span></span></div>
+              <div class="tcard"><span class="tile t-rose"><svg><use href="#i-paw"/></svg></span><span class="tbody"><span class="ttitle"><span data-lang="en" lang="en">Vaccination</span><span data-lang="uk" lang="uk">Вакцинація</span></span><span class="tmeta"><span data-lang="en" lang="en">Pet</span><span data-lang="uk" lang="uk">Улюбленець</span></span></span><span class="pill p-soon"><span data-lang="en" lang="en">Due today</span><span data-lang="uk" lang="uk">Сьогодні</span></span></div>
+              <p class="scr-sec"><span data-lang="en" lang="en">Coming soon</span><span data-lang="uk" lang="uk">Незабаром</span></p>
+              <div class="tcard"><span class="tile t-peach"><svg><use href="#i-car"/></svg></span><span class="tbody"><span class="ttitle"><span data-lang="en" lang="en">Renew insurance</span><span data-lang="uk" lang="uk">Продовжити страховку ОСЦПВ</span></span><span class="tmeta"><span data-lang="en" lang="en">Car</span><span data-lang="uk" lang="uk">Авто</span></span></span><span class="pill p-soon"><span data-lang="en" lang="en">In 5 days</span><span data-lang="uk" lang="uk">Через 5 днів</span></span></div>
+              <div class="tcard"><span class="tile t-sage"><svg><use href="#i-home"/></svg></span><span class="tbody"><span class="ttitle"><span data-lang="en" lang="en">Water filter</span><span data-lang="uk" lang="uk">Фільтр води</span></span><span class="tmeta"><span data-lang="en" lang="en">Home</span><span data-lang="uk" lang="uk">Дім</span></span></span><span class="pill p-neutral"><span data-lang="en" lang="en">In 12 days</span><span data-lang="uk" lang="uk">Через 12 днів</span></span></div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div data-lang="uk" lang="uk">
-      <div class="intro">
-        <h1>Tendful</h1>
-        <p class="tagline">Регулярні справи, нагадування та історія — в одному спокійному місці.</p>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="block" id="how" aria-labelledby="how-title">
+      <h2 id="how-title"><span data-lang="en" lang="en">How it works</span><span data-lang="uk" lang="uk">Як це працює</span></h2>
+      <ol class="steps">
+        <li class="card"><span class="num" aria-hidden="true">1</span><h3><span data-lang="en" lang="en">Add what matters</span><span data-lang="uk" lang="uk">Додай важливе</span></h3><p><span data-lang="en" lang="en">A car, a home, a pet, a plant, documents. Give each thing a name and a colour.</span><span data-lang="uk" lang="uk">Авто, дім, улюбленець, рослина, документи. Дай кожному назву й колір.</span></p></li>
+        <li class="card"><span class="num" aria-hidden="true">2</span><h3><span data-lang="en" lang="en">Set a schedule</span><span data-lang="uk" lang="uk">Налаштуй розклад</span></h3><p><span data-lang="en" lang="en">Add tasks that repeat every few days, weeks, months or years, and choose when to be reminded.</span><span data-lang="uk" lang="uk">Додай справи, що повторюються кожні кілька днів, тижнів, місяців чи років, і вибери, коли нагадувати.</span></p></li>
+        <li class="card"><span class="num" aria-hidden="true">3</span><h3><span data-lang="en" lang="en">Mark it done</span><span data-lang="uk" lang="uk">Познач виконаним</span></h3><p><span data-lang="en" lang="en">Add a note if you like. Things Tended saves it to the history and calculates the next due date.</span><span data-lang="uk" lang="uk">Додай нотатку, якщо хочеш. Things Tended збереже запис в історії й розрахує наступний термін.</span></p></li>
+      </ol>
+      <p class="chips-label" id="types-label"><span data-lang="en" lang="en">Things you can track</span><span data-lang="uk" lang="uk">Що можна відстежувати</span></p>
+      <ul class="chips" aria-labelledby="types-label">
+        <li class="chip t-slate"><span data-lang="en" lang="en">Car</span><span data-lang="uk" lang="uk">Автомобіль</span></li><li class="chip t-sage"><span data-lang="en" lang="en">Home</span><span data-lang="uk" lang="uk">Дім</span></li><li class="chip t-rose"><span data-lang="en" lang="en">Pet</span><span data-lang="uk" lang="uk">Тварина</span></li><li class="chip t-peach"><span data-lang="en" lang="en">Plant</span><span data-lang="uk" lang="uk">Рослина</span></li><li class="chip t-plum"><span data-lang="en" lang="en">Electronics</span><span data-lang="uk" lang="uk">Електроніка</span></li><li class="chip t-slate"><span data-lang="en" lang="en">Documents</span><span data-lang="uk" lang="uk">Документи</span></li><li class="chip t-sage"><span data-lang="en" lang="en">Bike</span><span data-lang="uk" lang="uk">Велосипед</span></li><li class="chip t-rose"><span data-lang="en" lang="en">Equipment</span><span data-lang="uk" lang="uk">Обладнання</span></li><li class="chip t-peach"><span data-lang="en" lang="en">Personal</span><span data-lang="uk" lang="uk">Особисте</span></li><li class="chip t-plum"><span data-lang="en" lang="en">Other</span><span data-lang="uk" lang="uk">Інше</span></li>
+      </ul>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="block" aria-labelledby="feat-title">
+      <h2 id="feat-title"><span data-lang="en" lang="en">Everything in one calm place</span><span data-lang="uk" lang="uk">Усе в одному спокійному місці</span></h2>
+      <div class="grid">
+        <article class="card feat">
+          <div class="fhead"><span class="ficon t-slate"><svg><use href="#i-list"/></svg></span><h3><span data-lang="en" lang="en">A dashboard that shows what’s next</span><span data-lang="uk" lang="uk">Дашборд, що підказує, що далі</span></h3></div>
+          <p><span data-lang="en" lang="en">Tasks that need attention come first, marked Overdue, Due today, Soon or Later. When nothing is due, it says everything is taken care of.</span><span data-lang="uk" lang="uk">Спершу те, що потребує уваги: Прострочено, Сьогодні, Скоро чи Пізніше. А коли нічого не горить, застосунок скаже, що все під контролем.</span></p>
+          <p class="mini" aria-hidden="true"><span class="pill p-overdue"><span data-lang="en" lang="en">Overdue</span><span data-lang="uk" lang="uk">Прострочено</span></span><span class="pill p-soon"><span data-lang="en" lang="en">Soon</span><span data-lang="uk" lang="uk">Скоро</span></span><span class="pill p-neutral"><span data-lang="en" lang="en">Later</span><span data-lang="uk" lang="uk">Пізніше</span></span><span class="pill p-done"><span data-lang="en" lang="en">Done</span><span data-lang="uk" lang="uk">Виконано</span></span></p>
+        </article>
+        <article class="card feat">
+          <div class="fhead"><span class="ficon t-peach"><svg><use href="#i-bell"/></svg></span><h3><span data-lang="en" lang="en">Reminders in advance</span><span data-lang="uk" lang="uk">Нагадування завчасно</span></h3></div>
+          <p><span data-lang="en" lang="en">Get a notification 30, 7 or 1 day before, on the due date, or after a number of days you choose. Things Tended never asks for notification permission at first launch.</span><span data-lang="uk" lang="uk">Отримуй сповіщення за 30, 7 чи 1 день, у день події або за власну кількість днів. Дозволу на сповіщення Things Tended не просить при першому запуску.</span></p>
+          <p class="mini" aria-hidden="true"><span class="pill p-neutral"><span data-lang="en" lang="en">30 days before</span><span data-lang="uk" lang="uk">За 30 днів</span></span><span class="pill p-neutral"><span data-lang="en" lang="en">7 days before</span><span data-lang="uk" lang="uk">За 7 днів</span></span><span class="pill p-neutral"><span data-lang="en" lang="en">On the due date</span><span data-lang="uk" lang="uk">У день події</span></span></p>
+        </article>
+        <article class="card feat">
+          <div class="fhead"><span class="ficon t-sage"><svg><use href="#i-clock"/></svg></span><h3><span data-lang="en" lang="en">History and notes</span><span data-lang="uk" lang="uk">Історія та нотатки</span></h3></div>
+          <p><span data-lang="en" lang="en">Every completion is saved with its date and an optional note, like a part number or a specialist’s contact. Archive a task and restore it later.</span><span data-lang="uk" lang="uk">Кожне виконання зберігається з датою та нотаткою за бажанням: наприклад, номер запчастини чи контакт майстра. Завдання можна заархівувати й повернути пізніше.</span></p>
+        </article>
+        <article class="card feat">
+          <div class="fhead"><span class="ficon t-plum"><svg><use href="#i-sync"/></svg></span><h3><span data-lang="en" lang="en">Works offline, syncs online</span><span data-lang="uk" lang="uk">Працює офлайн, синхронізується онлайн</span></h3></div>
+          <p><span data-lang="en" lang="en">Changes are saved on your device first and sent as soon as there’s a connection. After you sign in, your things are the same on all your devices. Sign in with Apple, Google or an email code.</span><span data-lang="uk" lang="uk">Зміни спершу зберігаються на пристрої й надсилаються, щойно з’являється з’єднання. Після входу твої дані однакові на всіх пристроях. Увійти можна через Apple, Google або код з електронної пошти.</span></p>
+        </article>
+        <article class="card feat">
+          <div class="fhead"><span class="ficon t-rose"><svg><use href="#i-widget"/></svg></span><h3><span data-lang="en" lang="en">Home Screen widget</span><span data-lang="uk" lang="uk">Віджет на головному екрані</span></h3></div>
+          <p><span data-lang="en" lang="en">See your nearest tasks without opening the app, in small and medium sizes.</span><span data-lang="uk" lang="uk">Найближчі справи без відкриття застосунку, у малому та середньому розмірах.</span></p>
+        </article>
+        <article class="card feat">
+          <div class="fhead"><span class="ficon t-slate"><svg><use href="#i-shield"/></svg></span><h3><span data-lang="en" lang="en">Private by default</span><span data-lang="uk" lang="uk">Приватність за замовчуванням</span></h3></div>
+          <p><span data-lang="en" lang="en">No ads and no selling your data. Anonymous usage data stays off unless you turn it on.</span><span data-lang="uk" lang="uk">Жодної реклами й продажу даних. Анонімна статистика вимкнена, поки ти її не ввімкнеш.</span></p>
+        </article>
       </div>
-      <div class="sections">
-        <a class="card card-link" href="privacy.html">Політика конфіденційності</a>
-        <a class="card card-link" href="support.html">Підтримка</a>
+    </section>
+
+    <!-- WIDGET -->
+    <section class="block widget-sec" aria-labelledby="widget-title">
+      <div class="widget-copy">
+        <h2 id="widget-title"><span data-lang="en" lang="en">What matters, without opening the app</span><span data-lang="uk" lang="uk">Важливе — без відкриття застосунку</span></h2>
+        <p><span data-lang="en" lang="en">The Home Screen widget shows your nearest tasks and how many are overdue. It follows the same rules as the dashboard, so the two always agree.</span><span data-lang="uk" lang="uk">Віджет на головному екрані показує найближчі справи й кількість прострочених. Він працює за тими самими правилами, що й дашборд, тож вони завжди збігаються.</span></p>
+        <p class="small"><span data-lang="en" lang="en">iPhone · small and medium sizes</span><span data-lang="uk" lang="uk">iPhone · малий і середній розміри</span></p>
       </div>
-    </div>
+      <div class="widget-stage" aria-hidden="true">
+        <div class="wgt wgt-s">
+          <p class="w-head"><span data-lang="en" lang="en">Today</span><span data-lang="uk" lang="uk">Сьогодні</span></p>
+          <p class="w-row"><span class="w-name"><span data-lang="en" lang="en">Change engine oil</span><span data-lang="uk" lang="uk">Замінити моторну оливу</span></span><span class="w-due c-overdue"><span data-lang="en" lang="en">−3 d.</span><span data-lang="uk" lang="uk">−3 дн.</span></span></p>
+          <p class="w-row"><span class="w-name"><span data-lang="en" lang="en">Vaccination</span><span data-lang="uk" lang="uk">Вакцинація</span></span><span class="w-due c-soon"><span data-lang="en" lang="en">5 d.</span><span data-lang="uk" lang="uk">5 дн.</span></span></p>
+        </div>
+        <div class="wgt wgt-m">
+          <p class="w-head"><span><span data-lang="en" lang="en">Today</span><span data-lang="uk" lang="uk">Сьогодні</span></span><span class="w-count c-overdue"><span data-lang="en" lang="en">1 overdue</span><span data-lang="uk" lang="uk">1 прострочена</span></span></p>
+          <p class="w-row"><span class="tile t-slate"><svg><use href="#i-car"/></svg></span><span class="w-name"><span data-lang="en" lang="en">Change engine oil</span><span data-lang="uk" lang="uk">Замінити моторну оливу</span></span><span class="w-due c-overdue"><span data-lang="en" lang="en">−3 d.</span><span data-lang="uk" lang="uk">−3 дн.</span></span></p>
+          <p class="w-row"><span class="tile t-rose"><svg><use href="#i-paw"/></svg></span><span class="w-name"><span data-lang="en" lang="en">Vaccination</span><span data-lang="uk" lang="uk">Вакцинація</span></span><span class="w-due c-soon"><span data-lang="en" lang="en">5 d.</span><span data-lang="uk" lang="uk">5 дн.</span></span></p>
+          <p class="w-row"><span class="tile t-sage"><svg><use href="#i-home"/></svg></span><span class="w-name"><span data-lang="en" lang="en">Water filter</span><span data-lang="uk" lang="uk">Фільтр води</span></span><span class="w-due"><span data-lang="en" lang="en">12 d.</span><span data-lang="uk" lang="uk">12 дн.</span></span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRIVACY -->
+    <section class="block" aria-labelledby="priv-title">
+      <div class="card priv">
+        <div>
+          <h2 id="priv-title"><span data-lang="en" lang="en">Your things stay yours</span><span data-lang="uk" lang="uk">Твої речі залишаються твоїми</span></h2>
+          <a class="button" href="privacy.html"><span data-lang="en" lang="en">Read the privacy policy</span><span data-lang="uk" lang="uk">Політика конфіденційності</span></a>
+        </div>
+        <ul class="checks">
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><span data-lang="en" lang="en">No ads, and we never sell your data.</span><span data-lang="uk" lang="uk">Жодної реклами, і ми ніколи не продаємо твої дані.</span></span></li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><span data-lang="en" lang="en">Anonymous usage data and error reports are off by default.</span><span data-lang="uk" lang="uk">Анонімна статистика й звіти про помилки вимкнені за замовчуванням.</span></span></li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><span data-lang="en" lang="en">Delete your account and all synced data anytime in Settings.</span><span data-lang="uk" lang="uk">Видалити обліковий запис і всі синхронізовані дані можна будь-коли в Налаштуваннях.</span></span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="block faq" aria-labelledby="faq-title">
+      <h2 id="faq-title"><span data-lang="en" lang="en">Questions</span><span data-lang="uk" lang="uk">Питання й відповіді</span></h2>
+      <div class="faq-list">
+        <details><summary><span data-lang="en" lang="en">Which devices does Things Tended run on?</span><span data-lang="uk" lang="uk">На яких пристроях працює Things Tended?</span></summary><p><span data-lang="en" lang="en">Things Tended is made for iPhone and is coming soon to the App Store.</span><span data-lang="uk" lang="uk">Things Tended створено для iPhone, і незабаром він з’явиться в App Store.</span></p></details>
+        <details><summary><span data-lang="en" lang="en">Does it work without internet?</span><span data-lang="uk" lang="uk">Чи працює без інтернету?</span></summary><p><span data-lang="en" lang="en">Yes. Changes are saved on your device and synced when you’re back online. Signing in needs a connection.</span><span data-lang="uk" lang="uk">Так. Зміни зберігаються на пристрої й синхронізуються, коли з’єднання повернеться. Для входу інтернет потрібен.</span></p></details>
+        <details><summary><span data-lang="en" lang="en">Which languages are supported?</span><span data-lang="uk" lang="uk">Які мови підтримуються?</span></summary><p><span data-lang="en" lang="en">English and Ukrainian. The app follows your device language.</span><span data-lang="uk" lang="uk">Англійська та українська. Застосунок обирає мову за налаштуваннями пристрою.</span></p></details>
+        <details><summary><span data-lang="en" lang="en">How do I sign in?</span><span data-lang="uk" lang="uk">Як увійти?</span></summary><p><span data-lang="en" lang="en">With Apple, Google, or a 6-digit code sent to your email. If you don’t have an account yet, one is created automatically.</span><span data-lang="uk" lang="uk">Через Apple, Google або 6-значний код, який надійде на пошту. Якщо акаунта ще немає, його буде створено автоматично.</span></p></details>
+        <details><summary><span data-lang="en" lang="en">Can I delete my account?</span><span data-lang="uk" lang="uk">Чи можна видалити обліковий запис?</span></summary><p><span data-lang="en" lang="en">Yes, anytime in Settings → Delete account. Your account, things, tasks and history are permanently removed.</span><span data-lang="uk" lang="uk">Так, будь-коли в Налаштування → Видалити обліковий запис. Обліковий запис, об’єкти, завдання та історію буде остаточно видалено.</span></p></details>
+        <details><summary><span data-lang="en" lang="en">How do I contact support?</span><span data-lang="uk" lang="uk">Як зв’язатися з підтримкою?</span></summary><p><span data-lang="en" lang="en">Write to</span><span data-lang="uk" lang="uk">Напиши на</span> <a href="mailto:support@tendful.ppv.codes">support@tendful.ppv.codes</a>. <span data-lang="en" lang="en">We usually reply within a couple of days.</span><span data-lang="uk" lang="uk">Зазвичай відповідаємо протягом кількох днів.</span> <a href="support.html"><span data-lang="en" lang="en">Support page</span><span data-lang="uk" lang="uk">Сторінка підтримки</span></a></p></details>
+      </div>
+    </section>
   </main>
+
   <footer class="footer">
-    <span>© 2026 Tendful</span>
+    <span>© 2026 Things Tended</span>
     <span><a href="privacy.html"><span data-lang="en">Privacy</span><span data-lang="uk">Конфіденційність</span></a> · <a href="support.html"><span data-lang="en">Support</span><span data-lang="uk">Підтримка</span></a></span>
   </footer>
 </div>
